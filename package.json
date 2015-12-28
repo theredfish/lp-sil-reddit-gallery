@@ -1,0 +1,42 @@
+{
+  "name": "npm-init",
+  "version": "1.0.0",
+  "description": "IUT Nantes : LP SIL ~ Reddit gallery project in React, HTML5 / CSS3",
+  "main": "GulpFile.js",
+  "dependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.3.5",
+    "node-fetch": "^1.3.3",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theredfish/lp-sil-reddit-gallery.git"
+  },
+  "keywords": [
+    "reddit",
+    "gallery",
+    "react",
+    "html5",
+    "css3"
+  ],
+  "author": "Julian Didier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theredfish/lp-sil-reddit-gallery/issues"
+  },
+  "homepage": "https://github.com/theredfish/lp-sil-reddit-gallery#readme"
+}
