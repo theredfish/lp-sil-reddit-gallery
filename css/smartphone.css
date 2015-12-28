@@ -1,0 +1,83 @@
+header {
+	top: 0px;
+	z-index:1;
+	position: fixed;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	border-bottom: 2px solid grey;
+	background: black;
+}
+
+#gallery {
+	margin-top: 60px;
+	width: 100%;
+	overflow: hidden;
+}
+
+#gallery .img-box {
+	position: relative;
+	float: left;
+	width: 50%;
+	padding-bottom: 50%;
+}
+
+#gallery .img-box .img-content {
+	position: absolute;
+	overflow: hidden;
+	left: 5px;
+	right: 5px;
+	top: 5px;
+	bottom: 5px;
+}
+
+#gallery .img-box .img-content img {
+	width: 100%;
+}
+
+#gallery .img-box .img-content .img-title {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin-bottom: -100px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	padding: 10px;
+	text-align: center;
+	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	-o-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
+}
+
+/*
+	Load CSS animation by removing
+	margin-bottom "on mouse enter"
+*/
+#gallery .img-box .img-content:hover .img-title {
+	margin-bottom: 0;
+}
+
+.img-content:hover .img-content {
+	width: 300px;
+}
+
+footer {
+	left:0px;
+	bottom:0px;
+	background: black;
+	width: 100%;
+	padding: 10px;
+	text-align: left;
+	color: white;
+	border-top: 2px dashed grey;
+}
+
+footer a {
+	text-decoration: none;
+	color: gold;
+}
+
+footer a:hover {
+	font-style: italic;
+}

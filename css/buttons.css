@@ -1,0 +1,33 @@
+.btn {
+	color: #5b5b5b;
+	border: none;
+	border-radius: 5px;
+	/*height: 30px;*/
+	padding: 10px;
+	font-size: 14px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.btn::-moz-focus-inner {
+	outline: 0;
+	border: 0;
+	zoom: normal;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.btn.btn-orange {
+	background-color: #F8D261;
+}
+
+.btn.btn-blue {
+	background-color: #2E6DA4;
+	color: white;
+}
+
+.btn.btn-blue:hover {
+	background-color: #045FB4;
+}
+
