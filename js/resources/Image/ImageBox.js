@@ -1,18 +1,43 @@
 let ImageBox = React.createClass({
+
 	loadRedditImages: function() {
 		let _this = this;
 
-		fetch(_this.props.url, {method: 'GET', cache: 'force-cache'})
-		  .then(_this.checkResponseStatus)
-		  .then(_this.parseResponseJson)
-		  .then(function(data) {
-			  let images = data.data.children.filter(_this.filterByImage);
-			  images = images.filter(_this.getSafeForWork);
-			  _this.setState({data: images});
+		fetch(_this.props.url + _this.props.currentSort + '.json', {
+			method: 'GET',
+			cache: 'force-cache'
+		})
+		.then(_this.checkResponseStatus)
+		.then(_this.parseResponseJson)
+		.then(function(data) {
+			let images = data.data.children.filter(_this.filterByImage);
+		  	images = images.filter(_this.getSafeForWork);
+		  	_this.setState({data: images});
 		}).catch(function(error) {
 		    console.log('request failed', error);
 		});
   	},
+	/**
+	 * Handle new sort submitted from ImageForm
+	 * TODO : cache result
+	 */
+	handleSortSubmit: function(sort) {
+		let _this = this;
+		console.log("Get callback handleSortSubmit with sort = " + sort.sort);
+		fetch(_this.props.url + sort.sort + '.json', {
+			method: 'GET',
+			cache: 'force-cache'
+		})
+		.then(_this.checkResponseStatus)
+		.then(_this.parseResponseJson)
+		.then(function(data) {
+			let images = data.data.children.filter(_this.filterByImage);
+		  	images = images.filter(_this.getSafeForWork);
+		  	_this.setState({data: images});
+		}).catch(function(error) {
+		    console.log('request failed', error);
+		});
+	},
 	/**
 	 * Check status from HTTP response and return response or HTTP error.
 	 *
@@ -62,7 +87,6 @@ let ImageBox = React.createClass({
 	},
 	/**
 	 * Initialize our component with an initial state
-	 * @return {[type]} [description]
 	 */
 	getInitialState: function() {
 		return {data: []};
@@ -79,7 +103,7 @@ let ImageBox = React.createClass({
 	render: function() {
 		return (
 			<div className="imageBox">
-				<ImageForm />
+				<ImageForm onSortSubmit={this.handleSortSubmit} />
 				<ImageList data={this.state.data} />
 			</div>
 		);
