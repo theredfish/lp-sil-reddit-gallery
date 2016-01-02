@@ -14,14 +14,18 @@ After some tests fetch is supported with "file:" protocol by these browsers : Ch
 Open `interface.html` with your favorite browser.
 
 ## Interface with JavaScript
+### Install dependencies
+Launch `npm install` to install node modules (Babel, presets, bower, ...) necessary to the project.
+Next the command `bower install` offers React, ReactDOM and Fetch modules.
+
+
 ### Build the project
 Open a terminal, `cd` into the lp-sil-reddit-gallery project and launch
 `gulp build`. Now you should have "build" folder in your "js" parent folder.
 
-If you need, you can launch `gulp watch` or `gulp` to rebundle the project when changes occurs in `resources/**/*.js`. 
+If you need, you can launch `gulp watch` to detect when changes occurs in `resources/**/*.js`. This command is useful during development.&
 
-### Install dependencies
-Next, launch `npm install` to install node modules (React, ReactDOM, Fetch polyfill, Babel, ...) necessary to the project.
+
 
 ### App.html
 Finally, open `app.html` with a browser which support fetch with

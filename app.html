@@ -11,109 +11,20 @@
 	<link rel="stylesheet" media="screen and (max-width : 700px)" href="css/smartphone.css">
 </head>
 
-<body>
-	<header>
-		<nav>
-			<form action="">
-				<input type="text" name="keywords" placeholder="Search reddit picture" />
-
-				<select name="picture-type" id="SelectPictureType">
-					<option value="hot">Hot</option>
-					<option value="top">Top</option>
-					<option value="new">New</option>
-					<option value="controversial">Controversial</option>
-				</select>
-
-				<button type="submit" class="btn btn-blue">Go!</button>
-			</form>
-		</nav>
-	</header>
-
-	<section id="gallery">
-		<div id="example"></div>
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img1.jpg" alt="img1">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img2.jpg" alt="img2">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img3.png" alt="img3">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img4.jpg" alt="img4">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img5.jpg" alt="img5">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img6.jpg" alt="img6">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img7.gif" alt="img7">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img8.jpg" alt="img8">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img9.jpg" alt="img9">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img10.png" alt="img1">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img11.jpg" alt="img11">
-				<div class="img-title">lorem impsum dolor leviosa</div>
-			</div>
-		</div>
-	</section>
+<body id="bodyGallery">
 
 	<footer>
 		IUT Nantes ~ LP : SIL project. Reddit based gallery. <a href="mailto:julian.didier@etu.univ-nantes.fr">julian.didier@etu.univ-nantes.fr</a>
 	</footer>
 
-	<script src="./js/build/build.js"></script>
+	<script src="./bower_components/react/react.min.js"></script>
+	<script src="./bower_components/react/react-dom.min.js"></script>
+	<script src="./bower_components/fetch/fetch.js"></script>
+	<script src="./js/build/Image/ImageItem.js"></script>
+	<script src="./js/build/Image/ImageList.js"></script>
+	<script src="./js/build/Image/ImageForm.js"></script>
+	<script src="./js/build/Image/ImageBox.js"></script>
+	<script src="./js/build/App.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,30 @@
+{
+  "name": "npm-init",
+  "description": "IUT Nantes : LP SIL ~ Reddit gallery project in React, HTML5 / CSS3",
+  "main": "GulpFile.js",
+  "authors": [
+    "Julian Didier"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "reddit",
+    "gallery",
+    "react",
+    "html5",
+    "css3"
+  ],
+  "homepage": "https://github.com/theredfish/lp-sil-reddit-gallery",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fetch": "~0.10.1",
+    "react": "~0.14.4"
+  }
+}
