@@ -3,7 +3,8 @@ let ImageBox = React.createClass({
 	loadRedditImages: function() {
 		let _this = this;
 
-		fetch(_this.props.url + _this.props.currentSort + '.json', {
+		fetch(
+			_this.props.url + _this.props.sort + '.json?limit=' + _this.props.limit, {
 			method: 'GET',
 			cache: 'force-cache'
 		})
@@ -23,8 +24,8 @@ let ImageBox = React.createClass({
 	 */
 	handleSortSubmit: function(sort) {
 		let _this = this;
-		console.log("Get callback handleSortSubmit with sort = " + sort.sort);
-		fetch(_this.props.url + sort.sort + '.json', {
+
+		fetch(_this.props.url + sort + '.json?limit=' + _this.props.limit, {
 			method: 'GET',
 			cache: 'force-cache'
 		})

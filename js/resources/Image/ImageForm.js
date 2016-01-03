@@ -15,8 +15,7 @@ let ImageForm = React.createClass({
       return;
     }
 
-    console.log('Publish callback onSortSubmits with : ' + sort);
-    this.props.onSortSubmit({sort});
+    this.props.onSortSubmit(sort);
   },
   render: function() {
     return (
