@@ -21,15 +21,26 @@ let ImageForm = React.createClass({
     return (
       <header>
         <nav>
-          <form className="ImageForm" onSubmit={this.handleSubmit}>
-            <input type="text" name="keywords" placeholder="Search reddit picture" />
+          <form action="#" className="imageForm" id="FormRedditGallery" onSubmit={this.handleSubmit}>
 
-            <select name="picture-type" id="SelectPictureType" onChange={this.handleSortChange}>
-              <option value="hot">Hot</option>
-              <option value="top">Top</option>
-              <option value="new">New</option>
-              <option value="controversial">Controversial</option>
-            </select>
+            <label id="FormLabelInformation">Trier par type et taille : </label>
+            <div className="select flat-select">
+              <select name="picture-type" id="SelectPictureType" onChange={this.handleSortChange}>
+                <option value="hot">Hot</option>
+                <option value="top">Top</option>
+                <option value="new">New</option>
+                <option value="controversial">Controversial</option>
+              </select>
+            </div>
+
+            <div className="select flat-select">
+              <select name="picture-size" id="SelectPictureSize">
+                <option value="350">350px</option>
+    						<option value="500">500px</option>
+    						<option value="600">600px</option>
+    						<option value="700">700px</option>
+              </select>
+            </div>
 
             <button type="submit" className="btn btn-blue">Go!</button>
         	</form>

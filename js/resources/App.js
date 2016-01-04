@@ -4,5 +4,5 @@
  */
 ReactDOM.render(
    <ImageBox url='https://www.reddit.com/r/Pics/' sort='hot' limit='100' />,
-   document.getElementById('bodyGallery')
+   document.getElementById('BodyRedditGallery')
 );

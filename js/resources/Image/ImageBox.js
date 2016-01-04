@@ -106,6 +106,10 @@ let ImageBox = React.createClass({
 			<div className="imageBox">
 				<ImageForm onSortSubmit={this.handleSortSubmit} />
 				<ImageList data={this.state.data} />
+
+				<footer>
+					IUT Nantes ~ LP : SIL project. Reddit based gallery. <a href="mailto:julian.didier@etu.univ-nantes.fr">julian.didier@etu.univ-nantes.fr</a>
+				</footer>
 			</div>
 		);
 	}

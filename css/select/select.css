@@ -1,0 +1,31 @@
+.select.flat-select {
+    width: 100px;
+    background: url(arrow-select.jpg) no-repeat right #ddd;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+
+/* We hide basic ugly arrow ... and we add stuff */
+.select.flat-select select {
+    background: transparent;
+    width: 120px;
+    padding: 5px;
+    border: 0;
+    height: 34px;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+/* Remove select border during focus or active  */
+.select.flat-select select:focus, select:active{
+    outline: none;
+}
+
+/* Same but specific to Mozilla */
+.select.flat-select select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}

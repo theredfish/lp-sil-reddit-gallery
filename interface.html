@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Reddit based gallery</title>
+	<title>Reddit gallery</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Reddit based gallery - IUT Nantes LP:SIL project">
 	<meta name="author" content="Julian Didier - julian.didier@etu.univ-nantes.fr">
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/buttons.css">
+	<link rel="stylesheet" href="css/button/button.css">
+	<link rel="stylesheet" href="css/select/select.css">
 	<link rel="stylesheet" media="screen and (min-width : 701px)" href="css/screen.css">
 	<link rel="stylesheet" media="screen and (max-width : 700px)" href="css/smartphone.css">
 </head>
@@ -14,15 +15,24 @@
 <body>
 	<header>
 		<nav>
-			<form action="">
-				<input type="text" name="keywords" placeholder="Search reddit picture" />
+			<form action="#" id="FormRedditGallery">
+				<div class="select flat-select">
+					<select name="picture-type" id="SelectPictureType">
+						<option value="hot">Hot</option>
+						<option value="top">Top</option>
+						<option value="new">New</option>
+						<option value="controversial">Controversial</option>
+					</select>
+				</div>
 
-				<select name="picture-type" id="SelectPictureType">
-					<option value="hot">Hot</option>
-					<option value="top">Top</option>
-					<option value="new">New</option>
-					<option value="controversial">Controversial</option>
-				</select>
+				<div class="select flat-select">
+					<select class="select flat-select" name="picture-size" id="SelectPictureSize">
+						<option value="350">350px</option>
+						<option value="500">500px</option>
+						<option value="600">600px</option>
+						<option value="700">700px</option>
+					</select>
+				</div>
 
 				<button type="submit" class="btn btn-blue">Go!</button>
 			</form>
@@ -30,80 +40,80 @@
 	</header>
 
 	<section id="gallery">
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img1.jpg" alt="img1">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img1.jpg" alt="img1" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img2.jpg" alt="img2">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img2.jpg" alt="img2" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img3.png" alt="img3">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img3.png" alt="img3" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img4.jpg" alt="img4">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img4.jpg" alt="img4" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img5.jpg" alt="img5">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img5.jpg" alt="img5" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img6.jpg" alt="img6">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img6.jpg" alt="img6" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img7.gif" alt="img7">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img7.gif" alt="img7" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img8.jpg" alt="img8">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img8.jpg" alt="img8" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img9.jpg" alt="img9">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img9.jpg" alt="img9" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img10.png" alt="img1">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img10.png" alt="img1" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 
-		<div class="img-box">
-			<div class="img-content">
-				<img src="img_test/img11.jpg" alt="img11">
-				<div class="img-title">lorem impsum dolor leviosa</div>
+		<div class="img-box" contenteditable="true">
+			<div class="img-content" contenteditable="false">
+				<img src="img_test/img11.jpg" alt="img11" contenteditable="false">
+				<div class="img-title" contenteditable="false">lorem impsum dolor leviosa</div>
 			</div>
 		</div>
 	</section>
