@@ -2,9 +2,17 @@ let ImageBox = React.createClass({
 
 	loadRedditImages: function() {
 		let _this = this;
+		let sort =  this.props.sort;
+		let url =  this.props.url;
+		let limit = this.props.limit;
+		let images_cached = {
+			hot: [],
+			top: [],
+			new: [],
+			controversial: []
+		};
 
-		fetch(
-			_this.props.url + _this.props.sort + '.json?limit=' + _this.props.limit, {
+		fetch(url + sort + '.json?limit=' + limit, {
 			method: 'GET',
 			cache: 'force-cache'
 		})
@@ -12,32 +20,40 @@ let ImageBox = React.createClass({
 		.then(_this.parseResponseJson)
 		.then(function(data) {
 			let images = data.data.children.filter(_this.filterByImage);
-		  	images = images.filter(_this.getSafeForWork);
-		  	_this.setState({data: images});
+			images = images.filter(_this.getSafeForWork);
+			images_cached[sort] = images;
+		  	_this.setState({data: images_cached});
 		}).catch(function(error) {
 		    console.log('request failed', error);
 		});
   	},
 	/**
 	 * Handle new sort submitted from ImageForm
-	 * TODO : cache result
 	 */
 	handleSortSubmit: function(sort) {
-		let _this = this;
+		let images_cached = this.state.data;
+		if (images_cached[sort].length > 0) {
+			this.setState({sort: sort});
+		} else {
+			let _this = this;
+			let url =  this.props.url;
+			let limit = this.props.limit
 
-		fetch(_this.props.url + sort + '.json?limit=' + _this.props.limit, {
-			method: 'GET',
-			cache: 'force-cache'
-		})
-		.then(_this.checkResponseStatus)
-		.then(_this.parseResponseJson)
-		.then(function(data) {
-			let images = data.data.children.filter(_this.filterByImage);
-		  	images = images.filter(_this.getSafeForWork);
-		  	_this.setState({data: images});
-		}).catch(function(error) {
-		    console.log('request failed', error);
-		});
+			fetch(url + sort + '.json?limit=' + limit, {
+				method: 'GET',
+				cache: 'force-cache'
+			})
+			.then(_this.checkResponseStatus)
+			.then(_this.parseResponseJson)
+			.then(function(data) {
+				let images = data.data.children.filter(_this.filterByImage);
+			  	images = images.filter(_this.getSafeForWork);
+				images_cached[sort] = images;
+			  	_this.setState({data: images_cached, sort});
+			}).catch(function(error) {
+			    console.log('request failed', error);
+			});
+		}
 	},
 	/**
 	 * Check status from HTTP response and return response or HTTP error.
@@ -90,7 +106,12 @@ let ImageBox = React.createClass({
 	 * Initialize our component with an initial state
 	 */
 	getInitialState: function() {
-		return {data: []};
+		return {data: {
+			hot: [],
+			new: [],
+			top: [],
+			controversial: []
+		}, sort: this.props.sort};
 	},
 	/**
 	 * When our component is render we load Reddit images.
@@ -105,7 +126,7 @@ let ImageBox = React.createClass({
 		return (
 			<div className="imageBox">
 				<ImageForm onSortSubmit={this.handleSortSubmit} />
-				<ImageList data={this.state.data} />
+				<ImageList data={this.state.data} sort={this.state.sort} />
 
 				<footer>
 					IUT Nantes ~ LP : SIL project. Reddit based gallery. <a href="mailto:julian.didier@etu.univ-nantes.fr">julian.didier@etu.univ-nantes.fr</a>
