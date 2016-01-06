@@ -1,3 +1,6 @@
+/**
+ * Header
+ */
 header {
 	top: 0px;
 	z-index:2;
@@ -17,9 +20,17 @@ header .select.flat-select {
 	display: inline-block;
 }
 
+/**
+ * Form
+ */
+
 #FormLabelInformation {
 	color: white;
 }
+
+/**
+ * Gallery
+ */
 
 #gallery {
 	margin-top: 60px;
@@ -32,22 +43,6 @@ header .select.flat-select {
 	float: left;
 	width: 25%;
 	padding-bottom: 20%;
-	transition: all .5s ease-in-out;
-}
-
-/* This element can be focused (see HTML contenteditable) */
-#gallery .img-box:focus {
-	outline: none;
-	width:50%;
-	z-index: 1;
-}
-
-#gallery .img-box:focus .img-content {
-	overflow: visible;
-}
-
-#gallery .img-box:focus .img-title {
-	visibility:hidden;
 }
 
 #gallery .img-box .img-content {
@@ -74,11 +69,18 @@ header .select.flat-select {
 	color: #FFF;
 	padding: 10px;
 	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 	-webkit-transition: all 0.4s ease-out;
 	-moz-transition: all 0.4s ease-out;
 	-o-transition: all 0.4s ease-out;
 	transition: all 0.4s ease-out;
 }
+
+/**
+ * Gallery CSS3 effects
+ */
 
 /*
 	Load CSS animation by removing
@@ -87,6 +89,25 @@ header .select.flat-select {
 #gallery .img-box .img-content:hover .img-title {
 	margin-bottom: 0;
 }
+
+/* This element can be focused (see tabindex) */
+#gallery .img-box:focus {
+	outline: none;
+	width:50%;
+	z-index: 1;
+}
+
+#gallery .img-box:focus .img-content {
+	overflow: visible;
+}
+
+#gallery .img-box:focus .img-title {
+	visibility:hidden;
+}
+
+/**
+ * Footer
+ */
 
 footer {
 	left:0;

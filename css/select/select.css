@@ -1,5 +1,5 @@
 .select.flat-select {
-    width: 100px;
+    width: 150px;
     background: url(arrow-select.jpg) no-repeat right #ddd;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -11,7 +11,7 @@
 /* We hide basic ugly arrow ... and we add stuff */
 .select.flat-select select {
     background: transparent;
-    width: 120px;
+    width: 170px;
     padding: 5px;
     border: 0;
     height: 34px;

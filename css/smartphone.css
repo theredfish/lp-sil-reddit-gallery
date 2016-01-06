@@ -1,6 +1,9 @@
+/**
+ * Header
+ */
 header {
 	top: 0px;
-	z-index:1;
+	z-index:2;
 	position: fixed;
 	width: 100%;
 	padding: 10px;
@@ -13,10 +16,17 @@ header .select.flat-select {
 	display: inline-block;
 }
 
+/**
+ * Form
+ */
 #FormLabelInformation {
 	color: white;
 	display: block;
 }
+
+/**
+ * Gallery
+ */
 
 #gallery {
 	margin-top: 60px;
@@ -24,29 +34,16 @@ header .select.flat-select {
 	overflow: hidden;
 }
 
+/**
+ * No title transition.
+ * Devices are smartphones / tablets
+ */
 #gallery .img-box {
 	position: relative;
 	float: left;
 	width: 50%;
 	padding-bottom: 50%;
-	transition: all .5s ease-in-out;
 }
-
-/* This element can be focused (see HTML contenteditable) */
-#gallery .img-box:focus {
-	outline: none;
-	width:100%;
-	z-index: 2;
-}
-
-#gallery .img-box:focus .img-content {
-	overflow: visible;
-}
-
-#gallery .img-box:focus .img-title {
-	visibility:hidden;
-}
-
 
 #gallery .img-box .img-content {
 	position: absolute;
@@ -63,15 +60,46 @@ header .select.flat-select {
 	width: 100%;
 }
 
+/**
+ * No title transition.
+ * These devices are smartphones / tablets
+ */
 #gallery .img-box .img-content .img-title {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	max-height: 100%;
 	background: rgba(0, 0, 0, 0.5);
 	color: #FFF;
 	padding: 10px;
 	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
+
+/**
+ * Gallery CSS3 effects
+ */
+
+/* This element can be focused (see tabindex) */
+#gallery .img-box:focus {
+	outline: none;
+	width:100%;
+	z-index: 1;
+}
+
+#gallery .img-box:focus .img-content {
+	overflow: visible;
+}
+
+#gallery .img-box:focus .img-title {
+	visibility:hidden;
+}
+
+/**
+ * Footer
+ */
 
 footer {
 	left:0;
